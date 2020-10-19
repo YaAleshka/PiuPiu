@@ -87,9 +87,6 @@ posc.set(screenX, Gdx.graphics.getHeight()-screenY);
         V.y = (posc.y /posc.len());
         System.out.println(V.x + "VVVVVVVVV" + V.y);
 
-     //   System.out.println(N.x + "VVVVVVVVV" +N.y);
-    //   System.out.println(N.x + "VVVVVVVVV" +N.y );
-
         return false;
     }
 }
