@@ -58,7 +58,7 @@ public class MenuScreen extends ru.ekzebiche.base.baseScreen {
             batch.draw(img2, point, 0);
             point -= 1;
         }
-       if (N.x ==Math.round(pos.x)){V.set(0, 0);}
+       if (N.x ==Math.round(pos.x) & (N.y ==Math.round(pos.y))) { V.set(0, 0);}
         pos.add(V);
 
     if (V.x>=0){img4 = new Texture("sh3.png"); }
