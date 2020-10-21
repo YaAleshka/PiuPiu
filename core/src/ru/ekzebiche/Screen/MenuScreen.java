@@ -1,34 +1,41 @@
 package ru.ekzebiche.Screen;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import ru.ekzebiche.MAth.Rect;
+import ru.ekzebiche.sprite.Background;
 
 public class MenuScreen extends ru.ekzebiche.base.baseScreen {
-
     private Texture img;
-    private Vector2 pos;
+    private Background background;
 
 
     @Override
     public void show() {
         super.show();
         img = new Texture("space1k1.jpg");
-        pos = new Vector2(-0.5f, -0.5f);
+        background = new Background(new TextureRegion(img));
+
+
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
         batch.begin();
-        batch.setColor(1f, 1f, 1f, 1f);
-        batch.draw(img, pos.x, pos.y,1f,1f);
-
+        background.draw(batch);
         batch.end();
     }
 
     @Override
-    public void dispose() {
+    public void resize(Rect worldBounds) {
+        background.resize(worldBounds);
+    }
+
+    @Override
+    public void dispose()
+    {   img.dispose();
         super.dispose();
     }
 
